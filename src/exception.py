@@ -22,9 +22,9 @@ class CustomException(Exception):
     
 # Needed for testing the code   
 #if __name__=="__main__":
-#   try:
-#        a=1/0
+#    try:
+#        a=1/0    
 #    except Exception as e:
-#        logging.info("Divide by Zero Error -Exception logging has started...")
+#        logging.info("Divide by Zero Error")
 #        raise CustomException(e,sys)
     
