@@ -1,8 +1,6 @@
 import sys
 import logging 
 
-
-
 def error_messag_detail(error, error_detail:sys):
     _,_,exec_tb = error_detail.exc_info()
     file_name = exec_tb.tb_frame.f_code.co_filename
@@ -19,7 +17,7 @@ class CustomException(Exception):
         
     def __str__(self):
         return self.error_message
-    
+#######################    
 # Needed for testing the code   
 #if __name__=="__main__":
 #    try:

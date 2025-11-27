@@ -1,11 +1,16 @@
 import os
 import sys
+import pandas as pd
+import numpy as np
+
+sys.path.append('C:\\Projects\\mlproject')
+
 from src.exception import CustomException
 from src.logger import logging
-import pandas as pd 
-
 from sklearn.model_selection import train_test_split
-from dataclasses import dataclass   
+from dataclasses import dataclass
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
 
 @dataclass
 class DataIngestionConfig:
@@ -44,7 +49,13 @@ class DataIngestion:
         except Exception as e:
             logging.info("Exception occurred in data ingestion")
             raise CustomException(e, sys)
+        
 if __name__ == "__main__":
     obj = DataIngestion()
-    obj.initiate_data_ingestion()   
+    train_data, test_data=obj.initiate_data_ingestion()
+    
+    data_transformation=DataTransformation()
+    data_transformation.initiate_data_transformation(train_data,test_data)
+    
+       
     

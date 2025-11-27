@@ -1,0 +1,15 @@
+[project]
+name = "my-project"
+version = "1.1.0"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    { name = "zaidisi786", email = "syed.ijlal.zaidi@gmail.com" },
+]
+dependencies = [
+    "pandas",
+    "numpy",
+    "seaborn",
+    "matplotlib",
+    "scikit-learn",
+]
